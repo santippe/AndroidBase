@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <div style="display: table-cell;vertical-align: middle;">
+            <div id="logo"></div>
+            <input type="text" id="" placeholder="Username" onfocus="goDown()">
+            <input type="password" id="" placeholder="Password" onfocus="goDown()">
+            <button onclick="tryLogin()">Login</button>
+        </div>
+    </div>
+    <script>
+        function tryLogin() {            
+            //call to server to send login info and storeID
+            JsInterface.StoreUserID('Pluto');
+            //JsInterface.Toast("test comm");
+            location.assign('index.html')
+        }
+        function goDown() {
+            window.screenTop(-1000);
+        }
+    </script>
+</body>
+
+</html>

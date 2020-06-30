@@ -1,0 +1,8 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(80, 93, 88)
+}
+*::selection{
+    background-color: transparent;
+}

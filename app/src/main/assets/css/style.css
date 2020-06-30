@@ -1,0 +1,91 @@
+body{
+    background-color: rgb(6, 61, 26);
+    padding: 0px;
+    margin: 0px;
+}
+#main{
+    width: 320px;
+    height: 100%;
+    position: absolute;
+    margin-left: -160px;
+    left: 50%;
+    display: table;
+    color: #eee;
+}
+#logo{
+    width: 320px;
+    height: 320px;    
+    background-image: url('file:///android_asset/imgs/logo.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-bottom: 20px;
+}
+#start{
+
+}
+.loader{
+    height: 100px;
+    width: 100%;
+    text-align: center;    
+    vertical-align: top;
+}
+svg path,svg rect{
+    fill: #FF6700;
+}
+input[type=text],input[type=password]{
+    border: none;
+    padding: 4px;
+    height: 40px;
+    line-height: 36px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0px;
+    margin-bottom: 10px;    
+    border-radius: 3px;
+}
+button,.button{
+    border: none;
+    padding: 4px;
+    height: 40px;
+    line-height: 32px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    background-color: rgb(1, 44, 16);
+    text-align: center;
+    color: #eee;
+    outline: none;
+    position: relative;
+}
+button:active,.button:active{
+    top:3px;
+}
+#ogremenu{
+    position: absolute;
+    width: 0px;
+    height: 100%;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.53);
+    transition: opacity 0.2s;
+}
+#leftmenu{
+    position: absolute;
+    width: 200px;
+    left: -200px;
+    height: 100%;
+    background-color: rgb(1, 44, 16);    
+    transition: left 0.2s;
+}
+#leftmenu>a{
+    display: block;
+    color: #eee;
+    padding: 10px;
+    text-decoration: none;
+}
+#profpciture{
+    height: 200px;
+    width: 200px;
+    background-repeat: no-repeat;
+}

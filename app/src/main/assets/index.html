@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/calendar.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <div style="display: table-cell;vertical-align: middle;">
+            <div id="calendar"></div>
+            <div id="statusday"></div>
+            <script>
+                let todayDate = new Date();
+                let dayInMonth = new Date(
+                    todayDate.getFullYear()
+                    , todayDate.getMonth() + 1
+                    , 0).getDate()
+                //define what to for pressing day
+                let xFunc = i => {
+                    JsInterface.Toast(i)
+                    //
+                }
+                let calendar = document.querySelector('#calendar')
+                for (let a = 1; a < dayInMonth + 1; a++) {
+                    let elem = document.createElement('div');
+                    elem.className = 'date'
+                    elem.innerHTML = a
+                    calendar.appendChild(elem);
+                    elem.onclick = () => { xFunc(a) }
+                }                
+            </script>
+            <button onclick="tryLogout()">Do Something cool!</button>
+        </div>
+    </div>
+    <div id="ogremenu"></div>
+    <div id="leftmenu">
+        <div id="profpciture"></div>
+        <a href="index.html">Main</a>
+        <a href="index.html">Settings</a>
+        <a onclick="tryLogout()">Logout</a>
+    </div>
+    <script>
+        document.querySelector('#profpciture').style.backgroundImage = 'url("http://192.168.1.100/profimg/' + JsInterface.GerLocalUserID() + '.png")'
+        function goDown() {
+            window.screenTop(-1000);
+        }
+        //JsInterface.Toast(localStorage.test)
+        if (localStorage.test == null) {
+            JsInterface.Toast("empty")
+            localStorage.test = 'ok'
+        } else {
+            JsInterface.Toast(localStorage.test)
+        }        
+    </script>
+    <script src="js/leftmenu.js"></script>
+</body>
+
+</html>

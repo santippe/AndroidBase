@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/server.js"></script>
+</head>
+
+<body>
+    TEST<br>
+    <div id="output"></div>
+    <button onclick="hj()">LAUNCH</button>
+    <a href="away.html">GO AWAY!</a>
+    <script>
+        let xhr = new XMLHttpRequest();
+        let output = document.querySelector('#output')
+        pp = output.innerHTML
+        xhr.onreadystatechange = function () {
+            pp += `<br>STATUS ${xhr.status} - STATE ${xhr.readyState} - DATA ${xhr.responseText}`
+            if (xhr.status == 200 && xhr.readyState == 4) {
+                //output.innerHTML = xhr.responseText
+                //output.innerHTML = 'TEST SEND OK'
+                //JsInterface.Message("diocan");
+            }
+            output.innerHTML = pp
+        };
+        function hj() {
+            pp = ''
+            output.innerHTML = pp
+            xhr.open("POST", "http://192.168.1.100/api/storesession")
+            setTimeout(() => { xhr.send() }, 1000)
+            //output.innerHTML = 'DIOCANE'
+        }
+    </script>
+</body>
+
+</html>
